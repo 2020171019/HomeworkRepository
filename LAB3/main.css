@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
+
+a {
+    color: black;
+}
+
+nav ul {
+    padding: 0px;
+}
+
+
+
+/*----- 배치 -----*/
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_body {
+    width: 1020px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.middle {
+    margin-top: 50px;
+}
+
+
+
+/*title*/
+.title {
+    font-family: 'Rubik Moonrocks', cursive;
+    font-size: 3em;
+    text-align: center;
+    font-weight: bold;
+
+    width: 820px;
+}
+
+/*nav*/
+.current_page {
+    font-weight: bold;
+    font-size: large;
+}
+
+.nav_list {
+    display: inline-block;
+}
+
+/*img*/
+img {
+    width: 200px;
+    height: 200px;
+}
+
+/*inputbox*/
+.input_box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    border: black dashed 2px;
+    padding: 30px;
+}
+
+/*btn*/
+.button_r {
+    background-color: white;
+    border: black solid 1px;
+
+    width: 80px;
+    height: 40px;
+}
+
+.button_l {
+    background-color: black;
+    border: black solid 1px;
+    color: white;
+
+    width: 80px;
+    height: 40px;
+}
+
+.button_r:active {
+    background-color: black;
+    border: white solid 1px;
+    color: white;
+}
+
+.button_l:active {
+    background-color: white;
+    color: black;
+}
+
+/*item-display-font*/
+.item_title {
+    font-weight: bold;
+}
+
+.price {
+    font-size: small;
+}
+
+.item > p {
+    height: 24px;
+    margin: 16px 0px;
+}
+
+
+
+/*----- index.html -----*/
+.head_section {
+    position: relative;
+    animation-duration: 2s;
+    animation-name: movingTitle;
+    animation-fill-mode: forwards;
+}
+
+@keyframes movingTitle {
+    from {left: 0;}
+    to {left: 200px}
+}
+
+.item_box {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.item {
+    margin: 5px;
+    width: 500px;
+    height: 500px;
+    border: black dashed 2px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.item_img_rotate {
+    transition: transform 2s;
+}
+
+.item_img_rotate:hover {
+    transform: rotate(360deg);
+}
+
+.item_img_scale {
+    transition: transform 2s;
+}
+
+.item_img_scale:hover {
+    transform: scale(2.5);
+}
+
+
+
+/*----- login, signup -----*/
+.nav_login {
+    color: gray;
+    font-size: small;
+}
+
+.button_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    margin-top: 40px;
+
+    width: 100%;
+}
