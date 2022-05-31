@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="main.css">
 
     <script>
-        let counter = 3;
+        let counter = 2;
 
         window.addEventListener("load", itemLoad());
 
@@ -26,27 +26,27 @@
             let response = await fetch(`product.json`);
             let product = await response.json()
 
-            if (start == 6) {
-                console.log(product.slice(0,start-1))
-                createItemBox(product.slice(0,start-1))
+            if (start == 4) {
+                console.log(product,0,5 )
+                createItemBox(product,0,5)
             }
             else {
-                console.log(product.slice(start-3, start-1))
-                createItemBox(product.slice(start-3, start-1))
+                console.log(product,start-1)
+                createItemBox(product,start-1, start+1)
 
             }
         }
 
 
-        function createItemBox(product) {
+        function createItemBox(product,start,end) {
 
             let box = document.getElementById("item_box");
 
-            for (let i = 0; i < product.length; i++) {
+            for (let i = start; i < end; i++) {
                 let item = document.createElement('div');
                 item.setAttribute("class", "item")
                 item.setAttribute("id", "item" + i)
-
+                console.log(product[i])
                 makeHtml(item, product[i], i)
 
                 box.appendChild(item)
