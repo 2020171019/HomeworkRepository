@@ -1,0 +1,73 @@
+[
+  {
+    "name": "롯데 ABC 초콜릿",
+    "price": 4780,
+    "weight": 187,
+    "imageURL": "https://contents.lotteon.com/itemimage/_v165705/LM/88/01/06/26/29/99/2_/00/1/LM8801062629992_001_1.jpg",
+    "type": "초콜릿"
+  },
+  {
+    "name": "가나 마일드 초콜릿",
+    "price": 1580,
+    "weight": 70,
+    "imageURL": "https://contents.lotteon.com/itemimage/_v142711/LM/88/01/06/26/36/82/2_/00/1/LM8801062636822_001_1.jpg",
+    "type": "초콜릿"
+  },
+  {
+    "name": "허쉬 키세스 쿠키앤크림",
+    "price": 4890,
+    "weight": 146,
+    "imageURL": "https://contents.lotteon.com/itemimage/_v100656/LM/69/42/83/67/07/70/5_/00/1/LM6942836707705_001_1.jpg",
+    "type": "초콜릿"
+  },
+  {
+    "name": "하리보 골드젤리",
+    "price": 1680,
+    "weight": 100,
+    "imageURL": "https://contents.lotteon.com/itemimage/_v131647/LM/40/01/68/63/01/55/5_/00/1/LM4001686301555_001_1.jpg",
+    "type": "젤리"
+  },
+  {
+    "name": "스페쇼우 젤리스트로우",
+    "price": 7980,
+    "weight": 800,
+    "imageURL": "https://contents.lotteon.com/itemimage/_v175700/LM/47/11/26/96/89/29/0_/00/1/LM4711269689290_001_1.jpg",
+    "type": "젤리"
+  },
+  {
+    "name": "츄파춥스 미니",
+    "price": 5280,
+    "weight": 300,
+    "imageURL": "https://contents.lotteon.com/itemimage/_v131704/LM/89/35/00/17/07/41/7_/00/1/LM8935001707417_001_1.jpg",
+    "type": "사탕"
+  },
+  {
+    "name": "청포도 사탕",
+    "price": 3980,
+    "weight": 323,
+    "imageURL": "https://contents.lotteon.com/itemimage/LM/88/01/06/23/32/23/6_/00/1/LM8801062332236_001_1.jpg",
+    "type": "사탕"
+  },
+  {
+    "name": "캐빈디쉬 트로피칼",
+    "price": 5880,
+    "weight": 300,
+    "imageURL": "https://contents.lotteon.com/itemimage/_v100645/LM/40/37/71/90/65/85/9_/00/1/LM4037719065859_001_1.jpg",
+    "type": "사탕"
+  },
+  {
+    "name": "자일리톨 오리지날 트윈팩",
+    "price": 3290,
+    "weight": 111,
+    "imageURL": "https://contents.lotteon.com/itemimage/_v142708/LM/88/01/06/23/24/86/6_/00/1/LM8801062324866_001_1.jpg",
+    "type": "껌"
+  },
+  {
+    "name": "동아 박카스맛 젤리",
+    "price": 1180,
+    "weight": 50,
+    "imageURL": "https://contents.lotteon.com/itemimage/_v111727/LM/88/06/01/14/35/63/1_/00/1/LM8806011435631_001_1.jpg",
+    "type": "젤리"
+  }
+
+]

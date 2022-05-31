@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입 E-commerce</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<h1 class="title">Welcome to<br>INTERNET-PROGRAMMING SHOP</h1>
+<p class="current_page">[ SIGN UP ]</p>
+
+<div class="middle">
+    <form class="input_box" method="post">
+        <p><label>Name: <input name="name" type="text" placeholder="Please enter your name." autofocus
+                               required/></label></p>
+        <p><label>Date of Birth: <input name="birthdate" type="date" required/></label></p>
+        <p><label>School Year: <input name="grade" type="number" min="1" max="6" step="1" required/></label></p>
+        <p><label>Phone Number: <input name="tel" type="tel" placeholder="(###) ###-####"
+                                       pattern="\(\d{3}\) \d{3}-\d{4}" required/></label></p>
+        <p><label>ID: <input name="user_id" type="text" placeholder="Please enter your ID" required/></label></p>
+        <p><label>Password: <input name="user_pw" type="password" placeholder="Please enter your Password"
+                                   required/></label></p>
+        <p><label>Password Check: <input name="user_pw_check" type="password"
+                                         placeholder="Please enter your Password, again" required/></label></p>
+
+        <div class="button_box">
+            <button class="button_l" type="submit">Sign Up</button>
+            <button class="button_r" type="reset">Reset</button>
+            <button class="button_l" onclick="location.href='index.html'">Main</button>
+            <button class="button_l" onclick="location.href='login.html'">Login</button>
+
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

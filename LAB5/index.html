@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-commerce</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <script>
+        let counter = 3;
+
+        window.addEventListener("load", itemLoad());
+
+        window.onscroll = () => {
+            if ((window.innerHeight + window.scrollY) >=
+                document.body.offsetHeight) {
+                itemLoad()
+            }
+        }
+
+        async function itemLoad() {
+            const start = counter*2
+            counter += 1
+            console.log(start)
+
+            let response = await fetch(`product.json`);
+            let product = await response.json()
+
+            if (start == 6) {
+                console.log(product.slice(0,start-1))
+                createItemBox(product.slice(0,start-1))
+            }
+            else {
+                console.log(product.slice(start-3, start-1))
+                createItemBox(product.slice(start-3, start-1))
+
+            }
+        }
+
+
+        function createItemBox(product) {
+
+            let box = document.getElementById("item_box");
+
+            for (let i = 0; i < product.length; i++) {
+                let item = document.createElement('div');
+                item.setAttribute("class", "item")
+                item.setAttribute("id", "item" + i)
+
+                makeHtml(item, product[i], i)
+
+                box.appendChild(item)
+            }
+        }
+
+        function showDetail(id) {
+            let currentNode = document.getElementById(id)
+            if (!currentNode) {
+                return
+            }
+            currentNode.nextElementSibling.style.display = "block"
+
+        }
+
+        function makeHtml(parent, product, num) {
+
+            let detail = document.createElement("div")
+            detail.setAttribute("id", "itemDetail" + num)
+            detail.setAttribute("class", "detail")
+
+
+            let name = document.createElement("p")
+            name.setAttribute("class", "item_title")
+            name.innerHTML = product.name;
+
+            let price = document.createElement("p")
+            price.setAttribute("class", "price")
+            price.innerHTML = "\\" + product.price;
+
+            let weight = document.createElement("p")
+            weight.innerHTML = product.weight + "g";
+
+            detail.appendChild(name)
+            detail.appendChild(price)
+            detail.appendChild(weight)
+
+            let image = document.createElement("img")
+            image.setAttribute("id", "itemImg" + num)
+            image.setAttribute("onclick", "showDetail(this.id)")
+            image.src = product.imageURL
+
+            parent.appendChild(image)
+            parent.appendChild(detail)
+
+        }
+
+        function newfetch() {
+            fetch("product.json")
+                .then(checkStatus)
+                .then(response => response.json())
+                .then(filtering)
+        }
+
+
+        function filtering(product) {
+            let name = document.getElementById("nameFilter").value
+            let type = document.getElementById("typeFilter").value
+
+            let parent = document.getElementById("item_box")
+
+            while (parent.hasChildNodes()) {
+                parent.removeChild(parent.firstChild);
+            }
+
+            let box = document.getElementById("item_box")
+
+            for (let i = 0; i < product.length; i++) {
+                if ((product[i].name.indexOf(name) != -1) && (product[i].type.indexOf(type) != -1)) {
+                    let item = document.createElement('div');
+                    item.setAttribute("class", "item")
+                    item.setAttribute("id", "item" + i)
+                    makeHtml(item, product[i], i)
+                    box.appendChild(item)
+                }
+            }
+
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+<div class="main_body">
+
+    <div class="head_section">
+        <h1 class="title" id="animation_title">INTERNET-PROGRAMMING SHOP</h1>
+    </div>
+    <nav>
+        <button class="button_l" onclick="location.href='login.html'">Login</button>
+        <button class="button_r" onclick="location.href='signup.html'">Sign Up</button>
+    </nav>
+    <div class="middle">
+        <div class="left">
+            <div class="type">
+                <label>카테고리 필터</label>
+                <select name="type" id="typeFilter">
+                    <option value="" selected>모두</option>
+                    <option value="껌">껌</option>
+                    <option value="젤리">젤리</option>
+                    <option value="사탕">사탕</option>
+                    <option value="초콜릿">초콜릿</option>
+                </select>
+            </div>
+            <hr/>
+            <div class="name">
+                <label>검색</label>
+                <input type="text" id="nameFilter">
+                <button class="button_r" onclick="newfetch()">적용</button>
+            </div>
+            <hr/>
+            <div class="text_box">
+                <label>INTERNET-PROGRAMMING SHOP 소개</label>
+                <p>소개글입니다</p>
+            </div>
+        </div>
+        <div class="right" id="item_box">
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

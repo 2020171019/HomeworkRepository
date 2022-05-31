@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
+
+a {
+    color: black;
+}
+
+nav ul {
+    padding: 0px;
+    list-style: none;
+}
+
+
+/*----- 배치 -----*/
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_body {
+    width: 1020px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.middle {
+    margin-top: 50px;
+    width: 90%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+
+    position: static;
+}
+
+.right {
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.left {
+    width: 25%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*title*/
+.title {
+    font-family: 'Rubik Moonrocks', cursive;
+    font-size: 3em;
+    text-align: center;
+    font-weight: bold;
+
+    width: 820px;
+}
+
+/*nav*/
+.current_page {
+    font-weight: bold;
+    font-size: large;
+}
+
+nav {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+/*img*/
+img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    margin: auto;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transform: translate(50, 50);
+}
+
+/*inputbox*/
+.input_box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    border: black dashed 2px;
+    padding: 30px;
+}
+
+/*input*/
+input{
+    border: black 1px solid;
+    border-radius: 0;
+
+    margin: 10px 0px;
+}
+
+/*btn*/
+.button_r {
+    background-color: white;
+    border: black solid 1px;
+
+    width: 65px;
+    height: 30px;
+}
+
+.button_l {
+    background-color: black;
+    border: black solid 1px;
+    color: white;
+
+    width: 65px;
+    height: 30px;
+}
+
+.button_r:active {
+    background-color: black;
+    border: white solid 1px;
+    color: white;
+}
+
+.button_l:active {
+    background-color: white;
+    color: black;
+}
+
+/*item-display-font*/
+
+.detail {
+    display: none;
+    z-index: 1;
+
+    padding: 10px;
+
+    position: absolute;
+    top: 20%;
+
+    background-color: black;
+
+}
+
+.detail > p {
+    height: 24px;
+    margin: 16px 0px;
+    color: white;
+    font-size: small;
+
+    text-align: center;
+}
+
+.item_title {
+    font-weight: bold;
+    font-size: larger;
+}
+
+
+/*----- index.html -----*/
+.head_section {
+    position: relative;
+    animation-duration: 2s;
+    animation-name: movingTitle;
+    animation-fill-mode: forwards;
+}
+
+@keyframes movingTitle {
+    from {
+        left: 200px;
+    }
+    to {
+        left: 0px;
+    }
+}
+
+.left > div {
+    width: 90%;
+    margin: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+}
+
+label {
+    margin: 10px;
+    font-size: larger;
+    font-weight: bold;
+
+    display: inline-block;
+}
+
+.item {
+    margin: 10px;
+    width: 40%;
+    padding-bottom: 40%;
+    border: black dashed 2px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+
+/*----- login, signup -----*/
+.nav_login {
+    color: gray;
+    font-size: small;
+}
+
+.button_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    margin-top: 40px;
+
+    width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    .main_body {
+        width: 100%;
+    }
+
+    .head_section {
+        position: static;
+        animation-duration: 0s;
+    }
+
+    .title {
+        width: 100%;
+    }
+
+    .middle {
+        flex-direction: column;
+    }
+
+    .left {
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .right {
+        width: 100%;
+    }
+
+    .item {
+        width: 90%;
+        padding-top: 90%;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    nav > ul {
+        flex-direction: column;
+    }
+
+    .item_box {
+        flex-direction: column;
+    }
+
+}
