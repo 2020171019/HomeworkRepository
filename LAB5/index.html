@@ -8,50 +8,56 @@
 
     <script>
         let counter = 2;
+        let filteringstate = false
 
-        window.addEventListener("load", itemLoad());
-
-        window.onscroll = () => {
-            if ((window.innerHeight + window.scrollY) >=
-                document.body.offsetHeight) {
-                itemLoad()
-            }
-        }
-
-        async function itemLoad() {
-            const start = counter*2
-            counter += 1
-            console.log(start)
-
+        async function itemLoad(filter = false) {
+            console.log(filter)
+            //fetch
             let response = await fetch(`product.json`);
             let product = await response.json()
 
+            //필터링
+            if (filter == true) {
+                counter = 2
+
+                //있던 것 지우기
+                let parent = document.getElementById("item_box")
+
+                while (parent.hasChildNodes()) {
+                    parent.removeChild(parent.firstChild);
+                }
+
+                product = filtering(product)
+            }
+
+            //infinity scroll
+            const start = counter * 2
+            counter += 1
+
             if (start == 4) {
-                console.log(product,0,5 )
-                createItemBox(product,0,5)
-            }
-            else {
-                console.log(product,start-1)
-                createItemBox(product,start-1, start+1)
+                //console.log(product, 0, 5)
+                createItemBox(product, 0, 5)
+            } else {
+                //console.log(product, start - 1)
+                createItemBox(product, start - 1, start + 1)
 
             }
-        }
+        };
 
-
-        function createItemBox(product,start,end) {
+        function createItemBox(product, start, end) {
 
             let box = document.getElementById("item_box");
 
             for (let i = start; i < end; i++) {
-                let item = document.createElement('div');
-                item.setAttribute("class", "item")
-                item.setAttribute("id", "item" + i)
-                console.log(product[i])
-                makeHtml(item, product[i], i)
+                let itemNode = document.createElement('div');
+                itemNode.setAttribute("class", "item")
+                itemNode.setAttribute("id", "item" + i)
+                //console.log(product[i])
+                makeHtml(itemNode, product[i], i)
 
-                box.appendChild(item)
+                box.appendChild(itemNode)
             }
-        }
+        };
 
         function showDetail(id) {
             let currentNode = document.getElementById(id)
@@ -60,71 +66,74 @@
             }
             currentNode.nextElementSibling.style.display = "block"
 
-        }
+        };
 
-        function makeHtml(parent, product, num) {
+        function makeHtml(parent, item, num) {
+            console.log(item)
+            let detailNode = document.createElement("div")
+            detailNode.setAttribute("id", "itemDetail" + num)
+            detailNode.setAttribute("class", "detail")
 
-            let detail = document.createElement("div")
-            detail.setAttribute("id", "itemDetail" + num)
-            detail.setAttribute("class", "detail")
 
+            let nameNode = document.createElement("p")
+            nameNode.setAttribute("class", "item_title")
+            nameNode.innerHTML = item.name;
 
-            let name = document.createElement("p")
-            name.setAttribute("class", "item_title")
-            name.innerHTML = product.name;
+            let priceNode = document.createElement("p")
+            priceNode.setAttribute("class", "price")
+            priceNode.innerHTML = "\\" + item.price;
 
-            let price = document.createElement("p")
-            price.setAttribute("class", "price")
-            price.innerHTML = "\\" + product.price;
+            let weightNode = document.createElement("p")
+            weightNode.innerHTML = item.weight + "g";
 
-            let weight = document.createElement("p")
-            weight.innerHTML = product.weight + "g";
+            detailNode.appendChild(nameNode)
+            detailNode.appendChild(priceNode)
+            detailNode.appendChild(weightNode)
 
-            detail.appendChild(name)
-            detail.appendChild(price)
-            detail.appendChild(weight)
+            let imageNode = document.createElement("img")
+            imageNode.setAttribute("id", "itemImg" + num)
+            imageNode.setAttribute("onclick", "showDetail(this.id)")
+            imageNode.src = item.imageURL
 
-            let image = document.createElement("img")
-            image.setAttribute("id", "itemImg" + num)
-            image.setAttribute("onclick", "showDetail(this.id)")
-            image.src = product.imageURL
+            parent.appendChild(imageNode)
+            parent.appendChild(detailNode)
 
-            parent.appendChild(image)
-            parent.appendChild(detail)
-
-        }
-
-        function newfetch() {
-            fetch("product.json")
-                .then(checkStatus)
-                .then(response => response.json())
-                .then(filtering)
-        }
-
+        };
 
         function filtering(product) {
             let name = document.getElementById("nameFilter").value
             let type = document.getElementById("typeFilter").value
 
-            let parent = document.getElementById("item_box")
-
-            while (parent.hasChildNodes()) {
-                parent.removeChild(parent.firstChild);
-            }
-
-            let box = document.getElementById("item_box")
-
+            let newProduct = []
             for (let i = 0; i < product.length; i++) {
                 if ((product[i].name.indexOf(name) != -1) && (product[i].type.indexOf(type) != -1)) {
-                    let item = document.createElement('div');
-                    item.setAttribute("class", "item")
-                    item.setAttribute("id", "item" + i)
-                    makeHtml(item, product[i], i)
-                    box.appendChild(item)
+                    newProduct.push(product[i])
                 }
             }
+            return newProduct
+        };
 
-        }
+        window.addEventListener("load", () => {
+
+                itemLoad(false);
+
+                window.onscroll = () => {
+                    if ((window.innerHeight + window.scrollY) >=
+                        document.body.offsetHeight) {
+                        itemLoad(filteringstate)
+
+                    }
+                }
+                ;
+
+                document.querySelector("#filteringData").addEventListener("click", () => {
+                    console.log("click");
+                    filteringstate = true;
+                    itemLoad(filteringstate);
+                })
+
+            }
+        )
 
 
     </script>
@@ -157,7 +166,7 @@
             <div class="name">
                 <label>검색</label>
                 <input type="text" id="nameFilter">
-                <button class="button_r" onclick="newfetch()">적용</button>
+                <button class="button_r" id="filteringData">적용</button>
             </div>
             <hr/>
             <div class="text_box">
