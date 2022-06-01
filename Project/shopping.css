@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Do+Hyeon&family=Gothic+A1:wght@300&display=swap');
+
+@font-face {
+    font-family: 'Bebas Neue', cursive;
+    src: url('https://fonts.googleapis.com/css2?family=Bebas+Neue');
+    unicode-range: U+0041-005A, U+0061-007A
+}
+
+@font-face {
+    font-family: 'Do Hyeon', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Do+Hyeon');
+    unicode-range: U+AC00-D7A3
+}
+
+@font-face {
+    font-family: 'Gothic A1', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?Gothic+A1:wght@300');
+    unicode-range: U+AC00-D7A3
+}
+
+
+.body {
+
+}
+
+nav {
+    width: 100%;
+    height: 55px;
+
+    font-size: 0;
+
+    margin-bottom: 80px;
+}
+
+nav a, nav a:after {
+
+    display: inline-block;
+    color: #FFF;
+
+    font-family: 'Bebas Neue', cursive;
+
+    padding: 0px;
+    margin: 0px;
+
+    width: 33%;
+    line-height: 55px;
+    height: 100%;
+
+    text-align: center;
+    vertical-align: middle;
+    font-size: 30px;
+
+
+    /*width: 40px;*/
+    /*height: 40px;*/
+
+}
+
+.nav_main {
+    background-color: limegreen;
+}
+
+.nav_bar {
+    background-color: lime;
+}
+
+.nav_map {
+    background-color: forestgreen;
+}
+
+.main_content {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.current_page {
+    font-family: 'Do Hyeon', sans-serif;
+    width: 80%;
+    text-align: left;
+    font-size: 40px;
+}
+
+.item_box {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 50px;
+
+}
+
+.item_title {
+    font-family: 'Do Hyeon', 'Bebas Neue';
+    font-size: 20px;
+    border-top: black solid 1px;
+
+    padding-top: 15px;
+    vertical-align: bottom;
+}
+
+.result {
+      font-family: 'Do Hyeon';
+    font-size: 30px;
+    color: forestgreen;
+}
+
+.non_green {
+    color: dimgray;
+}
+
+.img_box {
+    width: 80%;
+    padding-bottom: 80%;
+
+    position: relative;
+
+}
+
+.item_img {
+    width: 100%;
+    padding-bottom: 100%;
+    /*object-fit: contain;*/
+    position: absolute;
+    object-fit: cover;
+
+}
+
+.item_info {
+    margin-top: 20%;
+}
+
+.item_info > p {
+    font-family: 'Gothic A1', sans-serif;
+}
+
