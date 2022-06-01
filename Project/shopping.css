@@ -107,7 +107,7 @@ nav a, nav a:after {
     text-align: left;
     font-size: 8vw;
     padding-left: 5vw;
-    border-left: forestgreen solid 2px;
+    border-left: forestgreen solid 3px;
     font-weight: lighter;
 }
 
@@ -127,11 +127,11 @@ nav a, nav a:after {
     position: relative;
 }
 
-.item_box:active {
+.active {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
 }
 
-.current_item:active {
+.current_item active {
     box-shadow: none !important;
 }
 

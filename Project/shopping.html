@@ -6,13 +6,26 @@
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="shopping.css">
-
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 
     <script>
-        // overscroll을 위해 일단 과제로 했던 걸 옮겨 놨는데, 데이터 처리를 어떻게 하실지 모르겠어서 미완으로 놔두었습니다.
-        // 필요하다면 쓰시고 아니면 편하신대로 하시면 될것같습니다.
+        $(document).ready(function () {
+            $('.item_box').live('touchstart', function (event) {
+                $(this).addClass('active');
+            });
 
-        let counter = 1;
+            $('.item_box').live('touchend', function (event) {
+                $(this).removeClass('active');
+            });
+        });
+
+
+        출처: https://unabated.tistory.com/entry/모바일-사이트-버튼눌림효과-주기 [랄라라:티스토리]
+
+            // 이 아래부턴 overscroll을 위해 일단 과제로 했던 걸 옮겨 놨는데, 데이터 처리를 어떻게 하실지 모르겠어서 미완으로 놔두었습니다.
+            // 필요하다면 쓰시고 아니면 편하신대로 하시면 될것같습니다.
+
+            let counter = 1;
 
         async function itemLoad() {
             let response = await fetch(`product.json`);
