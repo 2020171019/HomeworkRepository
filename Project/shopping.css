@@ -26,6 +26,14 @@ h1 {
     font-size: 80px;
 }
 
+a, a:after {
+    color: #000;
+
+    font-family: 'Bebas Neue', cursive;
+    text-decoration: none;
+}
+
+
 nav {
     width: 100%;
     height: 100px;
@@ -40,12 +48,10 @@ nav a, nav a:after {
     display: inline-block;
     color: #FFF;
 
-    font-family: 'Bebas Neue', cursive;
-
     padding: 0px;
     margin: 0px;
 
-    width: 25%;
+    width: 33%;
     line-height: 100px;
     height: 100%;
 
@@ -114,6 +120,11 @@ nav a, nav a:after {
 .result {
     font-family: 'Do Hyeon';
     font-size: 55px;
+
+    margin-top: 20%;
+}
+
+.green {
     color: forestgreen;
 }
 
