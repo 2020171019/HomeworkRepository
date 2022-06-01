@@ -155,7 +155,7 @@ nav a, nav a:after {
 
 .item_title {
     font-family: "Gothic A1";;
-    font-size: 3vw;
+    font-size: 3.5vw;
     margin: 0;
     padding-top: 1vh;
     vertical-align: bottom;
@@ -200,11 +200,8 @@ nav a, nav a:after {
 }
 
 .item_info {
-    font-size: 2vw;
-}
-
-.item_info > p {
     font-family: 'Gothic A1', sans-serif;
+    font-size: 2.5vw;
 }
 
 .recommand {
