@@ -119,7 +119,7 @@ nav a, nav a:after {
     align-items: center;
     justify-content: center;
 
-    margin: 5vh 0;
+    margin: 5vh 5vw;
 }
 
 .current_item {
@@ -129,6 +129,10 @@ nav a, nav a:after {
 
 .item_box:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
+}
+
+.item_box:active {
+    box-shadow: none;
 }
 
 .current_item:hover {
@@ -172,8 +176,8 @@ nav a, nav a:after {
 }
 
 .green {
-    color: limegreen;
-    border: limegreen solid 2px;
+    color: lime;
+    border: lime solid 2px;
 }
 
 .non_green {
@@ -191,8 +195,8 @@ nav a, nav a:after {
 
 .current_item img {
     filter: brightness(60%);
-    width: 50vw;
-    height: 50vw;
+    width: 60vw;
+    height: 60vw;
 }
 
 .item_info {
@@ -204,7 +208,7 @@ nav a, nav a:after {
 }
 
 .recommand {
-    margin-top: 8vh;
+    margin-top: 10vh;
 
     display: flex;
     flex-direction: column;
