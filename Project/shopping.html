@@ -8,15 +8,26 @@
     <link rel="stylesheet" type="text/css" href="shopping.css">
 
     <script>
+
+        let counter = 1;
+
         async function itemLoad() {
             let response = await fetch(`product.json`);
             let product = await response.json()
-                        
+
+            for (let i = 0; i < product.length; i++) {
+                if (product[i]["postId"] == conuter) {
+                    createItemBox(product[i])
+                }
+            }
+            counter++
         }
 
-        window.addEventListener("load", () => {
+        function createItemBox(oneProduct){
 
-                let counter = 2;
+        };
+
+        window.addEventListener("load", () => {
 
                 window.onscroll = () => {
                     itemLoad()
@@ -29,6 +40,8 @@
 
             }
         )
+
+        //overscroll을 위해 일단
     </script>
 
 </head>
