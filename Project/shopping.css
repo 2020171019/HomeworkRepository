@@ -42,7 +42,7 @@ nav a, nav a:after {
     padding: 0px;
     margin: 0px;
 
-    width: 33%;
+    width: 25%;
     line-height: 100px;
     height: 100%;
 
@@ -62,6 +62,10 @@ nav a, nav a:after {
 
 .nav_bar {
     background-color: lime;
+}
+
+.nav_search {
+    background-color: limegreen;
 }
 
 .nav_map {
