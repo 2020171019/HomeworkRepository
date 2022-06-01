@@ -115,8 +115,8 @@ nav a, nav a:after {
 }
 
 .img_box {
-    width: 80%;
-    padding-bottom: 80%;
+    width: 70%;
+    padding-bottom: 70%;
 
     position: relative;
 
@@ -133,6 +133,7 @@ nav a, nav a:after {
 
 .item_info {
     margin-top: 20%;
+    font-size: 30px;
 }
 
 .item_info > p {
