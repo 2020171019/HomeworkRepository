@@ -119,7 +119,7 @@ nav a, nav a:after {
     align-items: center;
     justify-content: center;
 
-    margin: 5vh 5vw;
+    margin: 2vw 5vw;
 }
 
 .current_item {
@@ -195,8 +195,8 @@ nav a, nav a:after {
 
 .current_item img {
     filter: brightness(60%);
-    width: 60vw;
-    height: 60vw;
+    width: 65vw;
+    height: 65vw;
 }
 
 .item_info {
@@ -208,7 +208,7 @@ nav a, nav a:after {
 }
 
 .recommand {
-    margin-top: 10vh;
+    margin-top: 12vw;
 
     display: flex;
     flex-direction: column;
