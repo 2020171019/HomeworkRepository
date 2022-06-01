@@ -1,4 +1,5 @@
-//
+// 관련 정보: https://apis.map.kakao.com/web/guide/
+// 현재 사용자 위치를 받아서 표시하는 부분까지 해두었습니다.
 
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     mapOption = {

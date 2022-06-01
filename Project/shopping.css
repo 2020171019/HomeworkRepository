@@ -44,7 +44,7 @@
     }
 
     a, a:after {
-        color: red;
+        color: #000;
 
         font-family: 'Bebas Neue', cursive;
         text-decoration: none;
@@ -85,11 +85,11 @@
     }
 
     .nav_bar {
-        background-color: lime;
+        background-color: limegreen;
     }
 
     .nav_search {
-        background-color: limegreen;
+        background-color: lime;
     }
 
     .nav_map {
@@ -105,10 +105,11 @@
     }
 
     .current_page {
-        font-family: 'Do Hyeon', sans-serif;
+        font-family: 'Do Hyeon', 'Bebas Neue';
         width: 80%;
         text-align: left;
         font-size: 8vw;
+        border-left: forestgreen solid 2px;
     }
 
     .item_box {
