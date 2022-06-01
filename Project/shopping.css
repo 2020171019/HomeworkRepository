@@ -18,9 +18,7 @@
     unicode-range: U+AC00-D7A3
 }
 
-.item_title{color: red}
-
-@media all and (max-width:479px){
+@media screen and (max-width:480px){
 
 h1 {
     font-family: 'Bebas Neue', cursive;
