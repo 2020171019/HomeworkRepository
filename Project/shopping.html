@@ -7,10 +7,36 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="shopping.css">
 
+    <script>
+        async function itemLoad() {
+            let response = await fetch(`product.json`);
+            let product = await response.json()
+                        
+        }
+
+        window.addEventListener("load", () => {
+
+                let counter = 2;
+
+                window.onscroll = () => {
+                    itemLoad()
+
+                    if ((window.innerHeight + window.scrollY) >=
+                        document.body.offsetHeight) {
+                        itemLoad()
+                    }
+                };
+
+            }
+        )
+    </script>
+
 </head>
 <body>
 <header>
-    <h1 class="site_title"><a href="/index.html">GREENSCAN</a></h1>
+    <div class="site_title">
+        <a href="/index.html">GREENSCAN</a>
+    </div>
 </header>
 <nav>
     <a class="nav_bar" href="/Project/barcode.html">BARCODE SCAN</a>
@@ -52,10 +78,6 @@
             <p>&#8361;10000</p>
         </div>
     </div>
-    <!--돌아가는 버튼, 다시 캡쳐하기 버튼, 이미지 클릭하면 나올창?, 제공정보-->
-</div>
-
-</div>
 </div>
 </body>
 </html>
