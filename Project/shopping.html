@@ -9,6 +9,10 @@
 
 
     <script>
+        // 가로버전 + 웹 버전 css 작성
+        // 로고?
+
+
         // overscroll을 위해 일단 과제로 했던 걸 옮겨 놨는데, 데이터 처리를 어떻게 하실지 모르겠어서 미완으로 놔두었습니다.
         // 필요하다면 쓰시고 아니면 편하신대로 하시면 될것같습니다.
 
@@ -50,13 +54,13 @@
 <body>
 <header>
     <div class="site_title">
-        <a href="/index.html">GREENSCAN</a>
+        <a href="index.html">GREENSCAN</a>
     </div>
 </header>
 <nav>
-    <a class="nav_bar" href="/Project/barcode.html">BARCODE SCAN</a>
+    <a class="nav_bar" href="barcode.html">BARCODE SCAN</a>
     <a class="nav_search">SEARCH</a>
-    <a class="nav_map" href="/Project/map.html">MAP</a>
+    <a class="nav_map" href="map.html">MAP</a>
 </nav>
 
 <div class="main_content">
@@ -69,18 +73,20 @@
         <!--  img태그에 onclick을 넣어둔 것은, 이미지를 클릭하면 해당 물품을 판매하는 사이트로
         (혹은 쇼핑몰에 해당 제품 검색한 창으로) 이동할 것을 예상하고 한것인데, 마찬가지로 원하시는대로 빼도 될 것같습니다. -->
     <div class="item_box current_item">
+        <p class="line"> </p>
         <p class="item_title">[제품 이름]</p>
         <div class="img_box">
             <img class="item_img" onclick=""
-                 src="https://contents.lotteon.com/itemimage/LM/88/01/06/23/32/23/6_/00/1/LM8801062332236_001_1.jpg"/>
+                 src="https://contents.lotteon.com/itemimage/_v175700/LM/47/11/26/96/89/29/0_/00/1/LM4711269689290_001_1.jpg"/>
         </div>
         <p class="result green">녹색제품이 맞습니다.</p>
         <p class="result non_green">녹색제품이 아닙니다.</p>
     </div>
 
     <!--  같은 카테고리의 녹색제품 리스트  -->
-        <!--  데이터 받아와서 반복해 추가하면 될 것같습니다  ->
+        <!--  데이터 받아와서 반복해 추가하면 될 것같습니다  -->
     <div class="item_box">
+        <p class="line"> </p>
         <h3 class="item_title">이름</h3>
         <div class="img_box">
             <img class="item_img" onclick=""
@@ -92,11 +98,10 @@
     </div>
 
     <div class="item_box">
+        <p class="line"> </p>
         <h3 class="item_title">이름</h3>
-        <div class="img_box">
-            <img class="item_img" onclick=""
-                 src="https://contents.lotteon.com/itemimage/LM/88/01/06/23/32/23/6_/00/1/LM8801062332236_001_1.jpg"/>
-        </div>
+        <img class="item_img" onclick=""
+             src="https://contents.lotteon.com/itemimage/_v131647/LM/40/01/68/63/01/55/5_/00/1/LM4001686301555_001_1.jpg"/>
         <div class="item_info">
             <p>&#8361;10000</p>
         </div>
