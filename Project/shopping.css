@@ -174,9 +174,12 @@
     }
 
     /*-----*/
+
     #map {
-        width: 90%;
-        height: 90%;
+        width: 80vw;
+        height: 80vw;
+
+        border: forestgreen solid 3px;
     }
 
 
