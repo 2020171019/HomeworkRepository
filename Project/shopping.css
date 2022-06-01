@@ -127,15 +127,11 @@ nav a, nav a:after {
     position: relative;
 }
 
-.item_box:hover {
+.item_box:active {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
 }
 
-.item_box:active {
-    box-shadow: none;
-}
-
-.current_item:hover {
+.current_item:active {
     box-shadow: none !important;
 }
 
