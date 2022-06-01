@@ -30,7 +30,7 @@ h1 {
 }
 
 a, a:after {
-    color: #000;
+    color: red;
 
     font-family: 'Bebas Neue', cursive;
     text-decoration: none;
