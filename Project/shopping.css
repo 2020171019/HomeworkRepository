@@ -127,14 +127,6 @@ nav a, nav a:after {
     position: relative;
 }
 
-.active {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
-}
-
-.current_item active {
-    box-shadow: none !important;
-}
-
 .line {
     border-bottom: black solid 1.5px;
     width: 15vw;
@@ -212,7 +204,8 @@ nav a, nav a:after {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .recommand_list .item_img {
